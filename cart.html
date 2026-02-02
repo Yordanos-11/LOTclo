@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Lotta Clothing</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+    <!-- Header Navigation (Reused) -->
+    <header>
+        <a href="home.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">LOTTA CLOTHING</div>
+        </a>
+        <nav>
+            <a href="mens.html">Mens</a>
+            <a href="womens.html">Womens</a>
+            <a href="Accessories.html">Accessories</a>
+            <a href="cart.html" style="text-decoration: none; color: inherit;">
+                <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            </a>
+        </nav>
+    </header>
+
+    <div class="cart-container">
+        <a href="home.html" class="back-link"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        <h1 class="page-title">Your cart</h1>
+
+        <div class="cart-layout">
+            <!-- Cart Items List -->
+            <div class="cart-items" id="cart-items-container">
+                <!-- Items will be rendered here dynamically -->
+               <div class="empty-cart-message">Your cart is empty.</div>
+
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-results">
+                <div class="summary-card">
+                    <h2 class="summary-title">Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal-display">$0</span>
+                    </div>
+
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span id="total-display">$0</span>
+                    </div>
+
+                    <button class="checkout-btn" onclick="window.location.href='checkout.html'">
+    Go to Checkout
+</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Copy from Home) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LOTTA CLOTHING</h3>
+                <p class="footer-description">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/lotta_clothing_store/" class="social-icon"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lotta_clothing" class="social-icon"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Lotta Clothing © 2000-2023, All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script/cart.js"></script>
+</body>
+
+</html>

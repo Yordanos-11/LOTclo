@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Case - Lotta Clothing</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/product-details.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <a href="../../home.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">LOTTA CLOTHING</div>
+        </a>
+        <nav>
+            <a href="../../mens.html">Mens</a>
+            <a href="../../womens.html">Womens</a>
+            <a href="../../Accessories.html">Accessories</a>
+            <a href="../../cart.html" style="text-decoration: none; color: inherit;">
+                <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details-container">
+        <!-- Gallery -->
+        <div class="product-gallery">
+            <div class="thumbnail-list">
+                <img src="../../images/accessories/S.jpg" alt="Samsung Case Front" class="thumbnail active">
+                <img src="../../images/accessories/S1.jpg" alt="Samsung Case Back" class="thumbnail">
+                <img src="../../images/accessories/S2.jpg" alt="Samsung Case on Phone" class="thumbnail">
+            </div>
+            <div class="main-image">
+                <img src="../../images/accessories/S.jpg" alt="Samsung Case Main">
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info-section">
+            <h1 class="product-title">Samsung Phone Case</h1>
+            <div class="product-price-large">900 birr</div>
+
+            <div class="product-description">
+                <p>Protective phone case compatible with Samsung Galaxy S series. Features shock-absorbent material, raised edges for screen protection, and precise cutouts.</p>
+            </div>
+
+            <div class="product-option-group">
+                <label>Select Phone Model</label>
+                <div class="size-options">
+                    <button class="size-btn active" data-model="s23">Galaxy S23</button>
+                    <button class="size-btn" data-model="s22">Galaxy S22</button>
+                    <button class="size-btn" data-model="s21">Galaxy S21</button>
+                    <button class="size-btn" data-model="a54">Galaxy A54</button>
+                </div>
+            </div>
+
+            <div class="product-option-group">
+                <label>Select Color</label>
+                <div class="color-options">
+                    <div class="color-swatch black selected"><i class="fas fa-check"></i></div>
+                    <div class="color-swatch blue"></div>
+                    <div class="color-swatch red"></div>
+                    <div class="color-swatch clear"></div>
+                    <div class="color-swatch green"></div>
+                </div>
+            </div>
+
+            <div class="product-features">
+                <h3>Features:</h3>
+                <ul>
+                    <li>Military-grade drop protection</li>
+                    <li>Raised bezels protect screen & camera</li>
+                    <li>Anti-slip grip texture</li>
+                    <li>Wireless charging compatible</li>
+                    <li>Precise port and button access</li>
+                </ul>
+            </div>
+
+            <div class="purchase-actions">
+                <div class="qty-selector">
+                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview Section -->
+    <section class="product-preview-section">
+        <div class="preview-header" onclick="togglePreview()">
+            <h2>Product Preview</h2>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="preview-image-container" id="previewContainer">
+            <div class="tiktok-container-inner">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@lotta_clothing/video/phone-case-demo"
+                    data-video-id="phone-case-demo" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@lotta_clothing"
+                            href="https://www.tiktok.com/@lotta_clothing?refer=embed">@lotta_clothing</a> Protect your phone in style with our new Samsung cases! 📱 <a title="phonecase" target="_blank"
+                            href="https://www.tiktok.com/tag/phonecase?refer=embed">#phonecase</a> <a
+                            title="samsung" target="_blank"
+                            href="https://www.tiktok.com/tag/samsung?refer=embed">#samsung</a>
+                        <a title="phoneaccessories" target="_blank" href="https://www.tiktok.com/tag/phoneaccessories?refer=embed">#phoneaccessories</a>
+                        <a title="lotta" target="_blank" href="https://www.tiktok.com/tag/lotta?refer=embed">#LOTTA</a>
+                        <a target="_blank" title="♬ original sound  - Tech Gadgets"
+                            href="https://www.tiktok.com/music/original-sound-tech-gadgets?refer=embed">♬
+                            original sound - Tech Gadgets</a> </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Collapsible Preview
+        function togglePreview() {
+            const container = document.getElementById('previewContainer');
+            const header = document.querySelector('.preview-header');
+            container.classList.toggle('expanded');
+            header.classList.toggle('active');
+        }
+
+        // Image Gallery
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                // Remove active class from all
+                thumbnails.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked
+                this.classList.add('active');
+
+                // Update main image source
+                mainImage.src = this.src;
+
+                // Optional: Add a small fade animation effect
+                mainImage.style.opacity = '0.5';
+                setTimeout(() => {
+                    mainImage.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // Color Selection & Image Swapping
+        const colorSwatches = document.querySelectorAll('.color-swatch');
+
+        // Define mapping of colors to images
+        const colorImageMap = {
+            'black': '../../images/accessories/S.jpg',
+            'blue': '../../images/accessories/SB.jpg',
+            'red': '../../images/accessories/SR.jpg',
+            'clear': '../../images/accessories/SC.jpg',
+            'green': '../../images/accessories/SG.jpg'
+        };
+
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', function () {
+                // Remove selected class/icon from all
+                colorSwatches.forEach(s => {
+                    s.classList.remove('selected');
+                    s.innerHTML = '';
+                });
+
+                // Add selected class/icon to clicked
+                this.classList.add('selected');
+                this.innerHTML = '<i class="fas fa-check"></i>';
+
+                // Determine selected color from class list
+                let selectedColor = 'black'; // default
+                if (this.classList.contains('blue')) selectedColor = 'blue';
+                else if (this.classList.contains('red')) selectedColor = 'red';
+                else if (this.classList.contains('clear')) selectedColor = 'clear';
+                else if (this.classList.contains('green')) selectedColor = 'green';
+
+                // Update Main Image if mapping exists
+                if (colorImageMap[selectedColor]) {
+                    mainImage.src = colorImageMap[selectedColor];
+
+                    // Visual feedback animation
+                    mainImage.style.opacity = '0.5';
+                    setTimeout(() => {
+                        mainImage.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+
+        // Model Selection - Make clicked button black AND change image
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        
+        // Define mapping of models to images
+        const modelImageMap = {
+            's23': '../../images/accessories/S.jpg',
+            's22': '../../images/accessories/S22.jpg',
+            's21': '../../images/accessories/S21.jpg',
+            'a54': '../../images/accessories/A54.jpg'
+        };
+
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all and reset styles
+                sizeBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.backgroundColor = '';
+                    b.style.color = '';
+                });
+                
+                // Add active class to clicked and make black
+                this.classList.add('active');
+                this.style.backgroundColor = '#000';
+                this.style.color = '#fff';
+                
+                // Get the model from data attribute
+                const model = this.getAttribute('data-model');
+                
+                // Change main image based on model
+                if (modelImageMap[model]) {
+                    mainImage.src = modelImageMap[model];
+                    
+                    // Visual feedback animation
+                    mainImage.style.opacity = '0.5';
+                    setTimeout(() => {
+                        mainImage.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+
+        // Set default for size button
+        document.querySelector('.size-btn.active').style.backgroundColor = '#000';
+        document.querySelector('.size-btn.active').style.color = '#fff';
+
+    </script>
+
+    <!-- Recommendations / Similar Products -->
+    <section class="recommendations">
+        <h2 class="section-title">You Might Also Like</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../../images/accessories/chrome heart.jpg" alt="Chrome Hearts Glasses">
+                </div>
+                <div class="product-info">
+                    <div class="product-text">
+                        <div class="product-name">Chrome Hearts Glass</div>
+                        <div class="product-price">2000 birr</div>
+                    </div>
+                    <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../../images/accessories/travis.jpg" alt="Travis Bracelet">
+                </div>
+                <div class="product-info">
+                    <div class="product-text">
+                        <div class="product-name">Travis Bracelet</div>
+                        <div class="product-price">750 birr</div>
+                    </div>
+                    <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../../images/accessories/amiri.jpg" alt="Amiri Belt">
+                </div>
+                <div class="product-info">
+                    <div class="product-text">
+                        <div class="product-name">Amiri Belt</div>
+                        <div class="product-price">2000 birr</div>
+                    </div>
+                    <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../../images/accessories/iphone case.jpg" alt="iPhone Case">
+                </div>
+                <div class="product-info">
+                    <div class="product-text">
+                        <div class="product-name">iPhone Case</div>
+                        <div class="product-price">1000 birr</div>
+                    </div>
+                    <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LOTTA CLOTHING</h3>
+                <p class="footer-description">We have clothes that suits your style and which you're proud to wear. From
+                    women to men.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/lotta_clothing_store/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lotta_clothing" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Lotta Clothing © 2000-2023, All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="../../script/product-details.js"></script>
+</body>
+
+</html>

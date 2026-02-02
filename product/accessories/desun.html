@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Sunglasses - Lotta Clothing</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/product-details.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <a href="../../home.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">LOTTA CLOTHING</div>
+        </a>
+        <nav>
+            <a href="../../mens.html">Mens</a>
+            <a href="../../womens.html">Womens</a>
+            <a href="../../Accessories.html">Accessories</a>
+            <a href="../../cart.html" style="text-decoration: none; color: inherit;">
+                <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details-container">
+        <!-- Gallery -->
+        <div class="product-gallery">
+            <div class="thumbnail-list">
+                <img src="../../images/accessories/LS.jpg" alt="Designer Sunglasses" class="thumbnail active">
+                <img src="../../images/accessories/LS1.jpg" alt="Designer Sunglasses" class="thumbnail">
+                <img src="../../images/accessories/LS2.jpg" alt="Designer Sunglasses " class="thumbnail">
+            </div>
+            <div class="main-image">
+                <img src="../../images/accessories/LS.jpg" alt="Designer Sunglasses Main">
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info-section">
+            <h1 class="product-title">Designer Sunglasses</h1>
+            <div class="product-price-large">1500 birr</div>
+
+            <div class="product-description">
+                <p>Premium designer sunglasses with UV400 protection. Features polarized lenses, metal frame construction, and comes with a branded case.</p>
+            </div>
+
+            <div class="product-option-group">
+                <label>Select Frame Color</label>
+                <div class="color-options">
+                    <div class="color-swatch black selected"><i class="fas fa-check"></i></div>
+                    <div class="color-swatch gold"></div>
+                    <div class="color-swatch silver"></div>
+                    <div class="color-swatch tortoise"></div>
+                </div>
+            </div>
+
+            <div class="product-option-group">
+                <label>Select Lens Type</label>
+                <div class="size-options">
+                    <button class="size-btn active">Polarized</button>
+                    <button class="size-btn">Gradient</button>
+                    <button class="size-btn">Mirrored</button>
+                </div>
+            </div>
+
+            <div class="purchase-actions">
+                <div class="qty-selector">
+                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview Section -->
+    <section class="product-preview-section">
+        <div class="preview-header" onclick="togglePreview()">
+            <h2>Product Preview</h2>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="preview-image-container" id="previewContainer">
+            <div class="tiktok-container-inner">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@lotta_clothing/video/sunglasses-demo"
+                    data-video-id="sunglasses-demo" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@lotta_clothing"
+                            href="https://www.tiktok.com/@lotta_clothing?refer=embed">@lotta_clothing</a> Check out our new designer sunglasses collection! 😎 <a title="sunglasses" target="_blank"
+                            href="https://www.tiktok.com/tag/sunglasses?refer=embed">#sunglasses</a> <a
+                            title="designersunglasses" target="_blank"
+                            href="https://www.tiktok.com/tag/designersunglasses?refer=embed">#designersunglasses</a>
+                        <a title="lotta" target="_blank" href="https://www.tiktok.com/tag/lotta?refer=embed">#LOTTA</a>
+                        <a target="_blank" title="♬ original sound  - Fashion Music"
+                            href="https://www.tiktok.com/music/original-sound-fashion-music?refer=embed">♬
+                            original sound - Fashion Music</a> </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Collapsible Preview
+        function togglePreview() {
+            const container = document.getElementById('previewContainer');
+            const header = document.querySelector('.preview-header');
+            container.classList.toggle('expanded');
+            header.classList.toggle('active');
+        }
+
+        // Image Gallery
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                // Remove active class from all
+                thumbnails.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked
+                this.classList.add('active');
+
+                // Update main image source
+                mainImage.src = this.src;
+
+                // Optional: Add a small fade animation effect
+                mainImage.style.opacity = '0.5';
+                setTimeout(() => {
+                    mainImage.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // Lens Type Selection - Make clicked button black
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                sizeBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.backgroundColor = '';
+                    b.style.color = '';
+                });
+                this.classList.add('active');
+                this.style.backgroundColor = '#000';
+                this.style.color = '#fff';
+            });
+        });
+
+        // Set default for size button
+        document.querySelector('.size-btn.active').style.backgroundColor = '#000';
+        document.querySelector('.size-btn.active').style.color = '#fff';
+
+        // Color Selection - REMOVED IMAGE SWAPPING
+        const colorSwatches = document.querySelectorAll('.color-swatch');
+
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', function () {
+                // Remove selected class/icon from all
+                colorSwatches.forEach(s => {
+                    s.classList.remove('selected');
+                    s.innerHTML = '';
+                });
+
+                // Add selected class/icon to clicked
+                this.classList.add('selected');
+                this.innerHTML = '<i class="fas fa-check"></i>';
+                
+                // NO IMAGE CHANGING - REMOVED THE CODE THAT CHANGES IMAGES
+            });
+        });
+
+    </script>
+
+    <!-- Recommendations / Similar Products -->
+    <section class="recommendations">
+        <h2 class="section-title">You Might Also Like</h2>
+        <div class="products-grid">
+            <!-- Product 1 - Mea Culpa Beanie -->
+            <a href="Mea Culpa Beanie.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/mea culpa.jpg" alt="Mea Culpa Beanie">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Mea Culpa Beanie</div>
+                            <div class="product-price">1200 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 2 - Chrome Hearts -->
+            <a href="chrome-hearts.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/chrome heart.jpg" alt="Chrome Hearts Glass">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Chrome Hearts Glass</div>
+                            <div class="product-price">2000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 3 - iPhone Case -->
+            <a href="iphone case.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/iphone case.jpg" alt="iPhone Case">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">iPhone Case</div>
+                            <div class="product-price">1000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 4 - Amiri Belt -->
+            <a href="amiri.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/amiri.jpg" alt="Amiri Belt">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Amiri Belt</div>
+                            <div class="product-price">2000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LOTTA CLOTHING</h3>
+                <p class="footer-description">We have clothes that suits your style and which you're proud to wear. From
+                    women to men.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/lotta_clothing_store/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lotta_clothing" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Lotta Clothing © 2000-2023, All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="../../script/product-details.js"></script>
+</body>
+
+</html>

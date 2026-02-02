@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Hearts - Lotta Clothing</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/product-details.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <a href="../../home.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">LOTTA CLOTHING</div>
+        </a>
+        <nav>
+            <a href="../../mens.html">Mens</a>
+            <a href="../../womens.html">Womens</a>
+            <a href="../../Accessories.html">Accessories</a>
+            <a href="../../cart.html" style="text-decoration: none; color: inherit;">
+                <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details-container">
+        <!-- Gallery -->
+        <div class="product-gallery">
+            <div class="thumbnail-list">
+                <img src="../../images/accessories/face.jpg" alt="Nike Face Mask black" class="thumbnail active">
+                <img src="../../images/accessories/face2.png" alt="Nike Face Mask white" class="thumbnail">
+                <img src="../../images/accessories/face3.png" alt="Nike Face Mask white" class="thumbnail">
+            </div>
+            <div class="main-image">
+                <img src="../../images/accessories/face.jpg" alt="Nike Face Mask Main">
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info-section">
+            <h1 class="product-title">Nike Face Mask</h1>
+            <div class="product-price-large">1700 birr</div>
+
+            <div class="purchase-actions">
+                <div class="qty-selector">
+                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview Section -->
+    <section class="product-preview-section">
+        <div class="preview-header" onclick="togglePreview()">
+            <h2>Product Preview</h2>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="preview-image-container" id="previewContainer">
+            <div class="tiktok-container-inner">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@lotta_clothing/video/7596278301816065292"
+                    data-video-id="7596278301816065292" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@lotta_clothing"
+                            href="https://www.tiktok.com/@lotta_clothing?refer=embed">@lotta_clothing</a> Nike pro ski
+                        mask🥷🏽 Dm to get yours Tg:@lottaclothing <a title="skimask" target="_blank"
+                            href="https://www.tiktok.com/tag/skimask?refer=embed">#skimask</a> <a title="kingvon"
+                            target="_blank" href="https://www.tiktok.com/tag/kingvon?refer=embed">#kingvon</a> <a
+                            title="lotta" target="_blank" href="https://www.tiktok.com/tag/lotta?refer=embed">#LOTTA</a>
+                        <a title="nikepro" target="_blank"
+                            href="https://www.tiktok.com/tag/nikepro?refer=embed">#nikepro</a> <a title="nikeskimask"
+                            target="_blank" href="https://www.tiktok.com/tag/nikeskimask?refer=embed">#nikeskimask</a>
+                        <a target="_blank" title="♬ الصوت الأصلي - LIL CRAZY"
+                            href="https://www.tiktok.com/music/الصوت-الأصلي-7531426370141850385?refer=embed">♬ الصوت
+                            الأصلي - LIL CRAZY</a> </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Collapsible Preview
+        function togglePreview() {
+            const container = document.getElementById('previewContainer');
+            const header = document.querySelector('.preview-header');
+            container.classList.toggle('expanded');
+            header.classList.toggle('active');
+        }
+
+        // Image Gallery
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                // Remove active class from all
+                thumbnails.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked
+                this.classList.add('active');
+
+                // Update main image source
+                mainImage.src = this.src;
+
+                // Optional: Add a small fade animation effect
+                mainImage.style.opacity = '0.5';
+                setTimeout(() => {
+                    mainImage.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // Color Selection & Image Swapping
+        const colorSwatches = document.querySelectorAll('.color-swatch');
+
+        // Define mapping of colors to images
+        const colorImageMap = {
+            'black': '../../images/cloth/chrome heart.jpg',
+            'darkgray': '../../images/cloth/ch2.jpg'
+        };
+
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', function () {
+                // Remove selected class/icon from all
+                colorSwatches.forEach(s => {
+                    s.classList.remove('selected');
+                    s.innerHTML = '';
+                });
+
+                // Add selected class/icon to clicked
+                this.classList.add('selected');
+                this.innerHTML = '<i class="fas fa-check"></i>';
+
+                // Determine selected color from class list
+                let selectedColor = 'black'; // default
+                if (this.classList.contains('darkgray')) selectedColor = 'darkgray';
+
+                // Update Main Image if mapping exists
+                if (colorImageMap[selectedColor]) {
+                    mainImage.src = colorImageMap[selectedColor];
+
+                    // Visual feedback animation
+                    mainImage.style.opacity = '0.5';
+                    setTimeout(() => {
+                        mainImage.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+
+
+    </script>
+
+   
+    <!-- Recommendations / Similar Products -->
+    <section class="recommendations">
+        <h2 class="section-title">You Might Also Like</h2>
+        <div class="products-grid">
+            <!-- Product 1 - Amiri -->
+            <a href="amiri.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/amiri.jpg" alt="Amiri Belt">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Amiri Belt</div>
+                            <div class="product-price">2000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 2 - Chrome Hearts -->
+            <a href="chrome-hearts.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/chrome heart.jpg" alt="Chrome Hearts Glass">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Chrome Hearts Glass</div>
+                            <div class="product-price">2000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 3 - iPhone Case -->
+            <a href="iphone case.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/iphone case.jpg" alt="iPhone Case">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">iPhone Case</div>
+                            <div class="product-price">1000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 4 - Silbra -->
+            <a href="silbra.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/BR1.jpg" alt="Silbra">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Silver bracelet</div>
+                            <div class="product-price">1500 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LOTTA CLOTHING</h3>
+                <p class="footer-description">We have clothes that suits your style and which you're proud to wear. From
+                    women to men.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/lotta_clothing_store/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lotta_clothing" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Lotta Clothing © 2000-2023, All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="../../script/product-details.js"></script>
+</body>
+
+</html>

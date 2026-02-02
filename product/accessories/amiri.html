@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Hearts - Lotta Clothing</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/product-details.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <a href="../../home.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">LOTTA CLOTHING</div>
+        </a>
+        <nav>
+            <a href="../../mens.html">Mens</a>
+            <a href="../../womens.html">Womens</a>
+            <a href="../../Accessories.html">Accessories</a>
+            <a href="../../cart.html" style="text-decoration: none; color: inherit;">
+                <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details-container">
+        <!-- Gallery -->
+        <div class="product-gallery">
+            <div class="thumbnail-list">
+                <img src="../../images/accessories/amiri.jpg" alt="Amiri Front" class="thumbnail active">
+                <img src="../../images/accessories/amiri12.jpg" alt="Amiri Back" class="thumbnail">
+            </div>
+            <div class="main-image">
+                <img src="../../images/accessories/amiri.jpg" alt="Amiri Main">
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info-section">
+            <h1 class="product-title">Amiri Belt</h1>
+            <div class="product-price-large">2500 birr</div>
+
+            <div class="purchase-actions">
+                <div class="qty-selector">
+                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Image Gallery
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                // Remove active class from all
+                thumbnails.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked
+                this.classList.add('active');
+
+                // Update main image source
+                mainImage.src = this.src;
+
+                // Optional: Add a small fade animation effect
+                mainImage.style.opacity = '0.5';
+                setTimeout(() => {
+                    mainImage.style.opacity = '1';
+                }, 200);
+            });
+        });
+    </script>
+
+    <!-- Recommendations / Similar Products -->
+    <section class="recommendations">
+        <h2 class="section-title">You Might Also Like</h2>
+        <div class="products-grid">
+            <!-- Product 1 - Travis Bracelet -->
+            <a href="travis.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/travis.jpg" alt="Travis Bracelet">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Travis Bracelet</div>
+                            <div class="product-price">1500 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 2 - Amiri 2 -->
+            <a href="amiri 2.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/amiri 2.jpg" alt="Amiri 2">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Amiri 2</div>
+                            <div class="product-price">2000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 3 - The Weeknd -->
+            <a href="theweeknd.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/the weeknd.jpg" alt="The Weeknd">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">The Weeknd</div>
+                            <div class="product-price">1800 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 4 - Sam -->
+            <a href="sam.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/accessories/S.jpg" alt="Sam">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Samsung case</div>
+                            <div class="product-price">1200 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LOTTA CLOTHING</h3>
+                <p class="footer-description">We have clothes that suits your style and which you're proud to wear. From
+                    women to men.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/lotta_clothing_store/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lotta_clothing" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Lotta Clothing © 2000-2023, All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="../../script/product-details.js"></script>
+</body>
+
+</html>

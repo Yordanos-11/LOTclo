@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals - Lotta Clothing</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/casual.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <a href="home.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">LOTTA CLOTHING</div>
+        </a>
+        <nav>
+            <a href="mens.html">Mens</a>
+            <a href="womens.html">Womens</a>
+            <a href="new-arrivals.html">New Arrivals</a>
+            <a href="cart.html" style="text-decoration: none; color: inherit;">
+                <div class="cart-icon">🛒</div>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h3>Filters</h3>
+                    <span class="filter-icon">⚙️</span>
+                </div>
+                <ul class="category-list">
+                    <li>T-shirts</li>
+                    <li>Shorts</li>
+                    <li>Shirts</li>
+                    <li>Hoodie</li>
+                    <li>Jeans</li>
+                    <li>Shoes</li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h3>Price</h3>
+                    <span class="toggle-icon">^</span>
+                </div>
+                <div class="price-slider">
+                    <div class="slider-track-bg"></div>
+                    <div class="slider-track-fill"></div>
+                    <input type="range" min="50" max="300" value="50" class="price-input range-min">
+                    <input type="range" min="50" max="300" value="300" class="price-input range-max">
+                    <div class="price-labels">
+                        <span id="min-price-display">$50</span>
+                        <span id="max-price-display">$300</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-header">
+                    <h3>Size</h3>
+                    <span class="toggle-icon">^</span>
+                </div>
+                <div class="size-options">
+                    <button class="size-btn">XX-Small</button>
+                    <button class="size-btn">X-Small</button>
+                    <button class="size-btn">Small</button>
+                    <button class="size-btn">Medium</button>
+                    <button class="size-btn">Large</button>
+                    <button class="size-btn">X-Large</button>
+                    <button class="size-btn">XX-Large</button>
+                    <button class="size-btn">3X-Large</button>
+                    <button class="size-btn">4X-Large</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Grid Section -->
+        <main class="product-section">
+            <h1 class="page-title">New Arrivals</h1>
+
+            <div class="casual-products-grid">
+                <!-- Using Unused Images Here to fulfill 'use all pictures' request -->
+                <!-- Product 1: Jordan 4 -->
+                <div class="casual-product-card" data-category="Shoes" data-price="250" data-size="Large">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/J4.jpg" alt="Jordan 4 Military Black">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">Jordan 4 Retro</h3>
+                        <div class="casual-product-price">$250</div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Jordan 1 -->
+                <div class="casual-product-card" data-category="Shoes" data-price="200" data-size="Medium">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/j1.jpg" alt="Jordan 1 High">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">Jordan 1 High</h3>
+                        <div class="casual-product-price">$200</div>
+                    </div>
+                </div>
+
+                <!-- Product 3: New Balance 530 -->
+                <div class="casual-product-card" data-category="Shoes" data-price="110" data-size="Small">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/nb 530.jpg" alt="New Balance 530">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">New Balance 530</h3>
+                        <div class="casual-product-price">$110</div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Chrome Hearts -->
+                <div class="casual-product-card" data-category="Hoodie" data-price="350" data-size="Large">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/chrome heart.jpg" alt="Chrome Hearts Hoodie">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">Chrome Hearts</h3>
+                        <div class="casual-product-price">$350</div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Spider Hoodie (Linked) -->
+                <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                    <div class="casual-product-card" data-category="Hoodie" data-price="180" data-size="Medium">
+                        <div class="casual-product-image">
+                            <img src="images/cloth/spider.jpg" alt="Spider Hoodie">
+                            <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                        </div>
+                        <div class="casual-product-info">
+                            <h3 class="casual-product-name">Spider Hoodie</h3>
+                            <div class="casual-product-price">$180</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 6: Stussy Zip -->
+                <div class="casual-product-card" data-category="Hoodie" data-price="240" data-size="X-Large">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/stussy.jpg" alt="Stussy Zip Hoodie">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">Stussy Zip Hoodie</h3>
+                        <div class="casual-product-price">$240</div>
+                    </div>
+                </div>
+
+                <!-- Product 7: Acne -->
+                <div class="casual-product-card" data-category="Hoodie" data-price="180" data-size="Large">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/acne.jpg" alt="Y2K hoodie">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">Y2K hoodie</h3>
+                        <div class="casual-product-price">$180</div>
+                    </div>
+                </div>
+
+                <!-- Product 8: GoodGirl -->
+                <div class="casual-product-card" data-category="T-shirts" data-price="130" data-size="Medium">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/desire.jpg" alt="GoodGirl Tee">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">GoodGirl Tee</h3>
+                        <div class="casual-product-price">$130</div>
+                    </div>
+                </div>
+
+                <!-- Product 9: Shorts -->
+                <div class="casual-product-card" data-category="Shorts" data-price="80" data-size="Small">
+                    <div class="casual-product-image">
+                        <img src="images/cloth/flared.jpg" alt="Camo Shorts">
+                        <button class="quick-add-btn" title="Quick Add">🛒+</button>
+                    </div>
+                    <div class="casual-product-info">
+                        <h3 class="casual-product-name">Camo Shorts</h3>
+                        <div class="casual-product-price">$80</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn prev">← Previous</button>
+                <div class="page-numbers">
+                    <!-- JS will render buttons here -->
+                </div>
+                <button class="page-btn next">Next →</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LOTTA CLOTHING</h3>
+                <p class="footer-description">We have clothes that suits your style and which you're proud to wear. From
+                    women to men.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon">𝕏</a>
+                    <a href="#" class="social-icon facebook">f</a>
+                    <a href="#" class="social-icon">📷</a>
+                    <a href="#" class="social-icon">◉</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">HELP</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">Delivery Details</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Lotta Clothing © 2000-2023, All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script/casual.js"></script>
+</body>
+
+</html>

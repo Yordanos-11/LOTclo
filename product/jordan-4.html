@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan 4 Retro - Lotta Clothing</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/product-details.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <a href="../home.html" style="text-decoration: none; color: inherit;">
+            <div class="logo">LOTTA CLOTHING</div>
+        </a>
+        <nav>
+            <a href="../mens.html">Mens</a>
+            <a href="../womens.html">Womens</a>
+            <a href="../new-arrivals.html">New Arrivals</a>
+            <a href="../cart.html" style="text-decoration: none; color: inherit;">
+                <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details-container">
+        <!-- Gallery -->
+        <div class="product-gallery">
+            <div class="thumbnail-list">
+                <img src="../images/cloth/J4.jpg" alt="Jordan 4 Retro Front" class="thumbnail active">
+
+            </div>
+            <div class="main-image">
+                <img src="../images/cloth/J4.jpg" alt="Jordan 4 Retro Main">
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info-section">
+            <h1 class="product-title">Jordan 4 Retro</h1>
+            <div class="product-price-large">$250</div>
+
+            <div class="product-option-group">
+                <label>Select Colors</label>
+                <div class="color-options">
+                    <div class="color-swatch black selected"><i class="fas fa-check"></i></div>
+                    <div class="color-swatch blue"></div>
+                    <div class="color-swatch red"></div>
+                </div>
+            </div>
+
+            <div class="product-option-group">
+                <label>Choose Size</label>
+                <div class="size-options">
+                    <button class="size-btn">7</button>
+                    <button class="size-btn">8</button>
+                    <button class="size-btn">9</button>
+                    <button class="size-btn selected">10</button>
+                    <button class="size-btn">11</button>
+                    <button class="size-btn">12</button>
+                </div>
+            </div>
+
+            <div class="purchase-actions">
+                <div class="qty-selector">
+                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview Section -->
+    <section class="product-preview-section">
+        <div class="preview-header" onclick="togglePreview()">
+            <h2>Product Preview</h2>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="preview-image-container" id="previewContainer">
+            <div class="tiktok-container-inner">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bertvdmeer/video/7587838725183343905"
+                    data-video-id="7587838725183343905" style="max-width: 605px;min-width: 325px;">
+                    <section> <a target="_blank" title="@bertvdmeer"
+                            href="https://www.tiktok.com/@bertvdmeer?refer=embed">@bertvdmeer</a> We zijn in dit huis
+                        allemaal redelijk verwend.... as you can see <a title="spoiled" target="_blank"
+                            href="https://www.tiktok.com/tag/spoiled?refer=embed">#spoiled</a> <a title="brat"
+                            target="_blank" href="https://www.tiktok.com/tag/brat?refer=embed">#brat</a> <a
+                            title="ondankbaar" target="_blank"
+                            href="https://www.tiktok.com/tag/ondankbaar?refer=embed">#ondankbaar</a> <a title="ragebait"
+                            target="_blank" href="https://www.tiktok.com/tag/ragebait?refer=embed">#ragebait</a> <a
+                            title="christmas" target="_blank"
+                            href="https://www.tiktok.com/tag/christmas?refer=embed">#christmas</a> <a target="_blank"
+                            title="♬ original sound - Bert"
+                            href="https://www.tiktok.com/music/original-sound-7587838785527434017?refer=embed">♬
+                            original sound - Bert</a> </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Collapsible Preview
+        function togglePreview() {
+            const container = document.getElementById('previewContainer');
+            const header = document.querySelector('.preview-header');
+            container.classList.toggle('expanded');
+            header.classList.toggle('active');
+        }
+
+        // Image Gallery
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                mainImage.src = this.src;
+                mainImage.style.opacity = '0.5';
+                setTimeout(() => {
+                    mainImage.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // Color Selection & Image Swapping
+        const colorSwatches = document.querySelectorAll('.color-swatch');
+
+        const colorImageMap = {
+            'black': '../images/cloth/J.jpg',
+            'blue': '../images/cloth/JB.jpg',
+            'red': '../images/cloth/JR.jpg'
+        };
+
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', function () {
+                colorSwatches.forEach(s => {
+                    s.classList.remove('selected');
+                    s.innerHTML = '';
+                });
+
+                this.classList.add('selected');
+                this.innerHTML = '<i class="fas fa-check"></i>';
+
+                let selectedColor = 'black';
+                if (this.classList.contains('blue')) selectedColor = 'blue';
+                if (this.classList.contains('red')) selectedColor = 'red';
+
+                if (colorImageMap[selectedColor]) {
+                    mainImage.src = colorImageMap[selectedColor];
+                    mainImage.style.opacity = '0.5';
+                    setTimeout(() => {
+                        mainImage.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+
+        // Size Selection & Price Update
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        const priceElement = document.querySelector('.product-price-large');
+
+        const sizePriceMap = {
+            '7': 230,
+            '8': 240,
+            '9': 245,
+            '10': 250,
+            '11': 255,
+            '12': 260
+        };
+
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                sizeBtns.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+
+                const size = this.innerText;
+                if (sizePriceMap[size]) {
+                    priceElement.style.opacity = '0';
+                    setTimeout(() => {
+                        priceElement.innerText = '$' + sizePriceMap[size];
+                        priceElement.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+
+        priceElement.style.transition = 'opacity 0.2s ease';
+    </script>
+
+    <!-- Recommendations / Similar Products -->
+    <section class="recommendations">
+        <div class="products-grid">
+            <!-- Product 1 - Air Force 1 -->
+            <a href="../product/women/af1.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/women/af1.jpg" alt="Air Force 1">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Air Force 1</div>
+                            <div class="product-price">4500 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 2 - Adidas Campus -->
+            <a href="../product/women/adidas campus.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/women/adidas campus.jpg" alt="Adidas Campus">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Adidas Campus</div>
+                            <div class="product-price">3800 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 3 - Vans -->
+            <a href="../product/women/vans.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/women/vans1.jpg" alt="Vans">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">Vans knu Skool</div>
+                            <div class="product-price">4500 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Product 4 - The North Face Puffer -->
+            <a href="../product/women/tnf.html" style="text-decoration: none; color: inherit;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/women/tnf.jpg" alt="The North Face Puffer">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-name">The North Face Puffer</div>
+                            <div class="product-price">7000 birr</div>
+                        </div>
+                        <div class="product-cart-btn"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LOTTA CLOTHING</h3>
+                <p class="footer-description">We have clothes that suits your style and which you're proud to wear. From
+                    women to men.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="../../about.html">About</a></li>
+                     <li><a href="../../contact.html">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">HELP</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">Delivery Details</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; Lotta Clothing © 2000-2023, All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="../script/product-details.js"></script>
+</body>
+
+</html>
